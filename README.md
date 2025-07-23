@@ -136,8 +136,8 @@ python hwpdf.py
 
 ### 빌드
 ```bash
-pip install pyinstaller
-pyinstaller --onefile --windowed hwpdf.py
+pip install nuitka
+nuitka run.py --onefile --standalone --enable-plugin=pyqt6 --windows-icon-from-ico=icon.ico --output-dir=build --mingw64 --windows-disable-console --include-data-files=icon.png=icon.png
 ```
 
 </details>
@@ -145,6 +145,13 @@ pyinstaller --onefile --windowed hwpdf.py
 ---
 
 ## 💡 자주 묻는 질문
+
+<details>
+<summary><b>백신 프로그램이 바이러스래요. 님 해커에요?</b></summary>
+
+그럴리가요. 명백한 오진입니다. 오진의 이유는 다양하지만, exe로 변환 시 사용되는 라이브러리 pyinstaller나 nuitka로 빌드하면 오진이 빈번하게 나오더라고요. 예외처리 후 사용하시거나, 정 못 믿으시겠다면 파이썬 코드를 직접 실행해 보세요.
+
+</details>
 
 <details>
 <summary><b>PDF 파일은 어디에 저장되나요?</b></summary>
